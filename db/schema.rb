@@ -31,6 +31,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_28_150314) do
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
+  create_table "referents", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -39,8 +46,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_28_150314) do
     t.integer "status"
     t.integer "level"
     t.integer "priority"
+    t.bigint "referent_id", null: false
+    t.bigint "folder_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["folder_id"], name: "index_tasks_on_folder_id"
+    t.index ["referent_id"], name: "index_tasks_on_referent_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,4 +1,15 @@
 <div id="<%= dom_id task %>">
+
+  <p>
+    <strong>Folder:</strong>
+    <%= task.folder.name %>
+  </p>
+
+  <p>
+    <strong>Referent:</strong>
+    <%= task.referent.name %> (<%= task.referent.email %>)
+  </p>
+
   <p>
     <strong>Name:</strong>
     <%= task.name %>
@@ -8,6 +19,7 @@
     <strong>Description:</strong>
     <%= task.description %>
   </p>
+
 
   <p>
     <strong>Criticality:</strong>

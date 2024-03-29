@@ -1,3 +1,4 @@
+# FOLDER
 class FoldersController < ApplicationController
   before_action :set_folder, only: %i[ show edit update destroy ]
 

@@ -9,6 +9,9 @@ class CreateTasks < ActiveRecord::Migration[7.1]
       t.integer :level
       t.integer :priority
 
+      t.references :referent, null: false
+      t.references :folder, null: false
+
       t.timestamps
     end
   end
