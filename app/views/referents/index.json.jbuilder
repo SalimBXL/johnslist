@@ -1,1 +1,1 @@
-json.array! @referents, partial: "referents/referent", as: :referent
+json.array! @referents, partial: 'referents/referent', as: :referent

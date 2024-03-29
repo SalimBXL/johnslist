@@ -1,6 +1,6 @@
 # FOLDER
 class FoldersController < ApplicationController
-  before_action :set_folder, only: %i[ show edit update destroy ]
+  before_action :set_folder, only: %i[show edit update destroy]
 
   # GET /folders or /folders.json
   def index
@@ -8,8 +8,7 @@ class FoldersController < ApplicationController
   end
 
   # GET /folders/1 or /folders/1.json
-  def show
-  end
+  def show; end
 
   # GET /folders/new
   def new
@@ -17,8 +16,7 @@ class FoldersController < ApplicationController
   end
 
   # GET /folders/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /folders or /folders.json
   def create
@@ -26,7 +24,7 @@ class FoldersController < ApplicationController
 
     respond_to do |format|
       if @folder.save
-        format.html { redirect_to folder_url(@folder), notice: "Folder was successfully created." }
+        format.html { redirect_to folder_url(@folder), notice: 'Folder was successfully created.' }
         format.json { render :show, status: :created, location: @folder }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +37,7 @@ class FoldersController < ApplicationController
   def update
     respond_to do |format|
       if @folder.update(folder_params)
-        format.html { redirect_to folder_url(@folder), notice: "Folder was successfully updated." }
+        format.html { redirect_to folder_url(@folder), notice: 'Folder was successfully updated.' }
         format.json { render :show, status: :ok, location: @folder }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +51,20 @@ class FoldersController < ApplicationController
     @folder.destroy!
 
     respond_to do |format|
-      format.html { redirect_to folders_url, notice: "Folder was successfully destroyed." }
+      format.html { redirect_to folders_url, notice: 'Folder was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_folder
-      @folder = Folder.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def folder_params
-      params.require(:folder).permit(:name, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_folder
+    @folder = Folder.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def folder_params
+    params.require(:folder).permit(:name, :description)
+  end
 end

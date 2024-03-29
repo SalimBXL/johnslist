@@ -1,1 +1,1 @@
-json.array! @folders, partial: "folders/folder", as: :folder
+json.array! @folders, partial: 'folders/folder', as: :folder

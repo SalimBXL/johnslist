@@ -1,1 +1,1 @@
-json.partial! "referents/referent", referent: @referent
+json.partial! 'referents/referent', referent: @referent
