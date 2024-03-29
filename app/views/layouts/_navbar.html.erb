@@ -17,8 +17,10 @@
         <!-- Items if user is signed in -->
         <% if user_signed_in? %>
             <% menuItems = [
-                ["Profile",edit_user_registration_path], 
-                ["Posts",posts_path]
+                ["Profile", edit_user_registration_path], 
+                ["Posts",posts_path],
+                ["Folders", folders_path],
+                ["Tasks", tasks_path]
             ]%>
             <% menuItems.each do |linkName, linkPath| %>
                 <%= link_to linkName, linkPath, class: "w3-bar-item w3-button" %>
